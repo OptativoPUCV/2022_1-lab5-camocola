@@ -104,7 +104,71 @@ TreeNode * minimum(TreeNode * x){
 
 
 void removeNode(TreeMap * tree, TreeNode* node) {
+    TreeNode* aux=tree->root;
+    int nodeKey = *(int*)(node->pair->key);
+    while (aux != NULL)
+    {
+        int auxKey= *(int*)(aux->pair->key);
+        if (auxKey == nodeKey)
+        {
+            //nodo a eliminar encontrado
 
+            //nodo sin hijos
+            if (aux->left == NULL && aux->right == NULL )
+            {
+                if (aux->parent->left == aux)
+                {
+                    aux->parent->left = NULL;
+                }
+                else
+                {
+                    aux->parent->right = NULL;
+                }
+                free(aux);
+                aux = NULL;
+            }
+
+            //nodo con 1 hijo
+            if (aux->left != NULL && aux->right == NULL)
+            {
+                if (aux->parent->left == aux)
+                {
+                    aux->parent->left = aux->left;
+                }
+                else
+                {
+                    aux->parent->right = aux->left;
+                }
+                free(aux);
+                aux = NULL;
+            }
+            if (aux->left == NULL && aux->right != NULL)
+            {
+                if (aux->parent->left == aux)
+                {
+                    aux->parent->left = aux->right;
+                }
+                else
+                {
+                    aux->parent->right = aux->right;
+                }
+                free(aux);
+                aux = NULL;
+            }
+
+            //nodo con 2 hijos
+
+        }
+        else if (tree->lower_than(node->pair->key,aux->pair->key)==1)
+        {
+            //1 si key1<key2
+            aux = aux->left;
+        }
+        else{
+            //0 si key1>key2
+            aux = aux->right;
+        }
+    }
 }
 
 void eraseTreeMap(TreeMap * tree, void* key){
@@ -115,9 +179,6 @@ void eraseTreeMap(TreeMap * tree, void* key){
     removeNode(tree, node);
 
 }
-
-
-
 
 Pair * searchTreeMap(TreeMap * tree, void* key) {
     TreeNode* aux=tree->root;
