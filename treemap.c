@@ -105,11 +105,8 @@ TreeNode * minimum(TreeNode * x){
 
 void removeNode(TreeMap * tree, TreeNode* node) {
     TreeNode* aux=tree->root;
-    //int nodeKey = *(int*)(node->pair->key);
     while (aux != NULL)
     {
-        //int auxKey= *(int*)(aux->pair->key);
-        //if (auxKey == nodeKey)
         if (aux == node)
         {
             //nodo a eliminar encontrado
