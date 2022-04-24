@@ -228,7 +228,7 @@ Pair * nextTreeMap(TreeMap * tree) {
     else
     {
         TreeNode* aux = tree->current;
-        while (aux != NULL && aux->parent != NULL && lower_than_int(aux->parent, aux) == 1)
+        while (aux != NULL && aux->parent != NULL && tree->lower_than(aux->parent, aux) == 1)
         {
             aux = aux->parent;
         }

@@ -138,3 +138,9 @@ treemap.c:231:54: error: implicit declaration of function 'lower_than_int' [-Wer
 cc1.exe: all warnings being treated as errors
 Compilation failed
 578dee1
+Sun, Apr 24, 2022  3:49:05 PM: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  23|2
+total_score: 50/70
+c6d5515
