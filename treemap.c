@@ -138,6 +138,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
                 {
                     aux->parent->right = aux->left;
                 }
+                aux->left->parent = aux->parent;
                 free(aux);
                 aux = NULL;
             }
@@ -151,6 +152,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
                 {
                     aux->parent->right = aux->right;
                 }
+                aux->right->parent = aux->parent;
                 free(aux);
                 aux = NULL;
             }
