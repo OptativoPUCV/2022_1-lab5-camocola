@@ -65,6 +65,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
                 TreeNode* nuevoNodo = createTreeNode(key, value);
                 aux->left = nuevoNodo;
                 nuevoNodo->parent = aux;
+                tree->current = nuevoNodo;
                 return;
             }
             aux = aux->left;
@@ -77,6 +78,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
                 TreeNode* nuevoNodo = createTreeNode(key, value);
                 aux->right = nuevoNodo;
                 nuevoNodo->parent = aux;
+                tree->current = nuevoNodo;
                 return;
             }
             aux = aux->right;
