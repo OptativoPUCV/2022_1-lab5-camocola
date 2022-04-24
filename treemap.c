@@ -228,12 +228,12 @@ Pair * nextTreeMap(TreeMap * tree) {
     else
     {
         TreeNode* aux = tree->current;
-        while (aux != NULL && aux->parent != NULL && tree->lower_than(aux->parent, aux) == 1)
+        while (aux != NULL && aux->parent != NULL && tree->lower_than(aux->parent->pair->key, aux->pair->key) == 1)
         {
             aux = aux->parent;
         }
         aux = aux->parent;
-        if (aux != NULL && tree->lower_than(tree->current, aux) == 1)
+        if (aux != NULL && tree->lower_than(tree->current->pair->key, aux->pair->key) == 1)
         {
             tree->current = aux;
             return aux->pair;
