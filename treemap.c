@@ -231,7 +231,7 @@ Pair * nextTreeMap(TreeMap * tree) {
     }
     else
     {
-        TreeNode* aux = tree->current;
+        //TreeNode* aux = tree->current;
         //while (aux->parent < aux)
     }
     return NULL;
