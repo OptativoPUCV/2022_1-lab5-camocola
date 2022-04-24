@@ -185,11 +185,11 @@ void eraseTreeMap(TreeMap * tree, void* key){
 
 Pair * searchTreeMap(TreeMap * tree, void* key) {
     TreeNode* aux=tree->root;
-    int Key = *(int*)(key);
+    //int Key = *(int*)(key);
     while (aux != NULL)
     {
-        int auxKey= *(int*)(aux->pair->key);
-        if (auxKey == Key)
+        //int auxKey= *(int*)(aux->pair->key);
+        if (is_equal(tree, aux->pair->key, key))
         {
             tree->current = aux;
             return aux->pair;
