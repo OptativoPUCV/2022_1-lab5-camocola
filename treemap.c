@@ -219,9 +219,10 @@ Pair * nextTreeMap(TreeMap * tree) {
     if (tree->current->right != NULL)
     {
         TreeNode* minimo = minimum(tree->current->right);
+        tree->current = minimo;
         if (minimo != NULL)
         {
-            tree->current = minimo;
+            //tree->current = minimo;
             return minimo->pair;
         }
     }
@@ -232,9 +233,10 @@ Pair * nextTreeMap(TreeMap * tree) {
         {
             aux = aux->parent;
         }
+        tree->current = aux;
         if (aux != NULL )
         {
-            tree->current = aux;
+            //tree->current = aux;
             return aux->pair;
         }
     }
