@@ -127,7 +127,6 @@ void removeNode(TreeMap * tree, TreeNode* node) {
             //nodo con 1 hijo
             else if (aux->left != NULL && aux->right == NULL)
             {
-                //aux->left->parent = aux->parent;
                 if (aux->parent->left == aux)
                 {
                     aux->parent->left = aux->left;
@@ -141,7 +140,6 @@ void removeNode(TreeMap * tree, TreeNode* node) {
             }
             else if (aux->left == NULL && aux->right != NULL)
             {
-                //  aux->right->parent = aux->parent;
                 if (aux->parent->left == aux)
                 {
                     aux->parent->left = aux->right;
@@ -215,7 +213,9 @@ Pair * upperBound(TreeMap * tree, void* key) {
 }
 
 Pair * firstTreeMap(TreeMap * tree) {
-    return NULL;
+    TreeNode* firstNode = minimum(tree->root);
+    if (firstNode == NULL) return NULL;
+    return firstNode->pair;
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
