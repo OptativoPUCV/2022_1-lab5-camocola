@@ -232,6 +232,7 @@ Pair * nextTreeMap(TreeMap * tree) {
         {
             aux = aux->parent;
         }
+        aux = aux->parent;
         if (aux != NULL && tree->lower_than(tree->current, aux) == 1)
         {
             tree->current = aux;
