@@ -75,3 +75,9 @@ Sat, Apr 23, 2022  9:37:41 PM:
  tests:  0|0
    [ INFO ] eliminando dato con clave 5239 (nodo con dos hijos)
 4e4388e
+Sat, Apr 23, 2022  9:46:10 PM: 
+ treemap.c | 19 +++++++++----------
+ 1 file changed, 9 insertions(+), 10 deletions(-)
+ tests:  17|4
+total_score: 35/70
+4e549bc
