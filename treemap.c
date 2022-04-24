@@ -48,10 +48,8 @@ TreeMap * createTreeMap(int (*lower_than) (void* key1, void* key2)) {
 
 void insertTreeMap(TreeMap * tree, void* key, void * value) {
     TreeNode* aux=tree->root;
-    //int Key = *(int*)(key);
     while (aux != NULL)
     {
-        //int auxKey= *(int*)(aux->pair->key);
         if (is_equal(tree, aux->pair->key, key))
         {
             //llave repetida
@@ -185,10 +183,8 @@ void eraseTreeMap(TreeMap * tree, void* key){
 
 Pair * searchTreeMap(TreeMap * tree, void* key) {
     TreeNode* aux=tree->root;
-    //int Key = *(int*)(key);
     while (aux != NULL)
     {
-        //int auxKey= *(int*)(aux->pair->key);
         if (is_equal(tree, aux->pair->key, key))
         {
             tree->current = aux;
@@ -231,8 +227,16 @@ Pair * nextTreeMap(TreeMap * tree) {
     }
     else
     {
-        //TreeNode* aux = tree->current;
-        //while (aux->parent < aux)
+        TreeNode* aux = tree->current;
+        while (aux != NULL && aux->parent != NULL && lower_than_int(aux->parent, aux) == 1)
+        {
+            aux = aux->parent;
+        }
+        if (aux != NULL )
+        {
+            tree->current = aux;
+            return aux->pair;
+        }
     }
     return NULL;
 }

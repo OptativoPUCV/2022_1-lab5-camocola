@@ -127,3 +127,14 @@ Sun, Apr 24, 2022  3:40:37 PM:
  tests:  22|2
 total_score: 50/70
 aa9ed2d
+Sun, Apr 24, 2022  3:48:16 PM: 
+ treemap.c | 16 ++++++++++------
+ 1 file changed, 10 insertions(+), 6 deletions(-)
+In file included from test.c:4:0:
+treemap.c: In function 'nextTreeMap':
+treemap.c:231:54: error: implicit declaration of function 'lower_than_int' [-Werror=implicit-function-declaration]
+         while (aux != NULL && aux->parent != NULL && lower_than_int(aux->parent, aux) == 1)
+                                                      ^~~~~~~~~~~~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+578dee1
